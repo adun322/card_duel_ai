@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF0F0F0F"
+    >
+
+    <!-- Карты компьютера -->
+    <LinearLayout
+        android:id="@+id/computerCards"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="24dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        />
+
+    <!-- Статистика -->
+    <TextView
+        android:id="@+id/statsText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:lineSpacingMultiplier="1.2"
+        android:textColor="#FFFFFF"
+        android:layout_below="@id/computerCards"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="24dp"
+        android:gravity="center"/>
+
+    <!-- Карты игрока -->
+    <LinearLayout
+        android:id="@+id/playerCards"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/statsText"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        />
+
+    <!-- Кнопки действий -->
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@id/playerCards"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="24dp">
+
+        <Button
+            android:id="@+id/foldButton"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:text="СБРОСИТЬ"
+            android:textSize="16sp"
+            android:enabled="false"
+            android:layout_marginRight="24dp"/>
+
+        <Button
+            android:id="@+id/checkButton"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:text="ПРОВЕРИТЬ"
+            android:textSize="16sp"
+            android:enabled="false"
+            android:layout_marginRight="24dp"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/callButton"
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:text="ОТВЕТИТЬ"
+            android:textSize="16sp"
+            android:enabled="false"/>
+    </LinearLayout>
+
+    <!-- Результат раунда -->
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/buttonsLayout"
+        android:layout_marginTop="24dp"/>
+
+    <!-- Кнопка сброса статистики -->
+    <Button
+        android:id="@+id/resetStatsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="СБРОСИТЬ СТАТИСТИКУ"
+        android:textSize="16sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"/>
+</RelativeLayout>
