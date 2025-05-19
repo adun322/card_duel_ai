@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FF0F0F0F"
@@ -7,48 +9,57 @@
 
     <TextView
         android:id="@+id/questionText"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         android:gravity="center"
-        android:layout_marginBottom="24dp"/>
+        android:layout_marginBottom="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <RadioGroup
         android:id="@+id/answersGroup"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/questionText"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/questionText">
 
         <RadioButton
             android:id="@+id/answer1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF"/>
+            android:minHeight="48dp"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
 
         <RadioButton
             android:id="@+id/answer2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF"/>
+            android:minHeight="48dp"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
 
         <RadioButton
             android:id="@+id/answer3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF"/>
+            android:minHeight="48dp"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
 
         <RadioButton
             android:id="@+id/answer4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF"/>
+            android:minHeight="48dp"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
     </RadioGroup>
 
     <Button
@@ -57,9 +68,10 @@
         android:layout_height="wrap_content"
         android:text="ОТВЕТИТЬ"
         android:textSize="16sp"
-        android:layout_below="@id/answersGroup"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"/>
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/answersGroup"/>
 
     <TextView
         android:id="@+id/resultText"
@@ -67,10 +79,11 @@
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:textColor="#FFFFFF"
-        android:layout_below="@id/submitButton"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/submitButton"/>
 
     <TextView
         android:id="@+id/timerText"
@@ -78,9 +91,10 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:textColor="#AAAAAA"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/statsText"
@@ -88,7 +102,9 @@
         android:layout_height="wrap_content"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
-        android:layout_above="@id/timerText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"/>
-</RelativeLayout>
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/timerText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
